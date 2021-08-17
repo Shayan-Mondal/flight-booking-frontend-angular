@@ -1,0 +1,8 @@
+.flight {
+  background-color: aquamarine;
+  background-image: url("https://disruptmagazine.com/wp-content/uploads/2020/03/why-choose-summary.jpg");
+  /*background-image: url("https://images.pexels.com/photos/164589/pexels-photo-164589.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");*/
+  height: 100vh;
+  background-size: 100%;
+  background-size: cover;
+}

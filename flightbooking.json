@@ -1,0 +1,29 @@
+{
+  "flight": [
+    {
+      "flightname": "Indigo",
+      "from": "KOLKATA",
+      "to": "CHENNAI",
+      "date": "2021-08-18",
+      "fare": 800,
+      "id": 1
+    }
+  ],
+  "booking": [
+    {
+      "firstName": "Shayan",
+      "lastName": "Mondal",
+      "gender": "Male",
+      "flight": {
+        "flightname": "Indigo",
+        "from": "KOLKATA",
+        "to": "CHENNAI",
+        "date": "2021-08-18",
+        "fare": 800,
+        "id": 1
+      },
+      "seatNumber": "90h",
+      "id": 1
+    }
+  ]
+}

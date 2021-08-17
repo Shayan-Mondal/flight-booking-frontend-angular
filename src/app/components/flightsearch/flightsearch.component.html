@@ -1,0 +1,54 @@
+<div class="flight">
+    <div class="row search">
+        <div class="col-3 col-md-3 d-none d-md-block"></div>
+       <div class="col-12 col-md-6">
+    <h3 class="d-flex justify-content-center display-5 bg-secondary text-white mt-5 p-4">Flight Search</h3>
+    <br>
+    <label for="travellingFrom">Travelling From:</label>
+    <span>
+        <input type="text" class="form-control" [(ngModel)]="froms" [ngModelOptions]="{standalone: true}">
+    </span>
+    <hr>
+    <label for="goingTo">Going To</label>
+    <span><input type="text"class="form-control" [(ngModel)]="tos" [ngModelOptions]="{standalone: true}"></span>
+    <hr>
+    <label for="planning on">Planning On</label>
+    <span>
+        <input type="date" class="form-control" [(ngModel)]="dates" [ngModelOptions]="{standalone: true}">
+    </span>
+    <br>
+    <div class="text-center">
+        <button class="btn btn-success form-control w-25" (click)="getFlight()" >Submit</button>
+    </div>
+    <div>
+        <h2 class="d-flex justify-content-center display-5 mt-2 bg-secondary text-white">Available Flight</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Flight</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Date</th>
+                    <th>Fare</th>
+                    <th>Booking</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let flight of flights">
+                    <td>{{flight.id}}</td>
+                    <td>{{flight.flightname}}</td>
+                    <td>{{flight.from}}</td>
+                    <td>{{flight.to}}</td>
+                    <td>{{flight.date|date}}</td>
+                    <td>{{flight.fare}}</td>
+                    <td>
+                        <button class="btn btn-primary" [routerLink]="['/selectedflight',flight.id]">Book</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-3 col-md-3 d-none d-md-block"></div>
+    </div>
+</div>
