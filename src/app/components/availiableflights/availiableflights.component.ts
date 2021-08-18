@@ -18,11 +18,16 @@ export class AvailiableflightsComponent implements OnInit {
     date: new Date(),
     fare: 0
   }
+  message:string='';
   constructor(private flightServices:FlightService) { }
 
   ngOnInit(): void {
   }
   addflight(){
+    if(this.flight.flightname==''&&this.flight.from==''&&this.flight.from==''){
+      this.message="Please enter the available Flight details"
+    }
+    else{
     this.flightServices.addFlight(this.flight).subscribe((data)=>console.log(data)
     )
     this.flight.flightname='';
@@ -31,4 +36,5 @@ export class AvailiableflightsComponent implements OnInit {
     this.flight.from='';
     this.flight.to='';
   }
+}
 }

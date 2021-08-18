@@ -1,32 +1,69 @@
 <div>
     <div class="row book">
+      <div class="col-3 col-md-3 d-none d-md-block"></div>
+      <div class="col-12 col-md-6">
+        <h3
+          class="
+            d-flex
+            justify-content-center
+            display-5
+            bg-secondary
+            text-white
+            mt-5
+            p-4
+          "
+        >
+          Booking Search
+        </h3>
+        <div *ngIf="message!==''" class="alert alert-danger text-center">{{message}}</div> 
+        <hr />
+        Booking Reference:
+        <input
+          type="number"
+          class="form-control w-25"
+          min="1"
+          [(ngModel)]="bookingid"
+        />
+        <hr />
+        <div class="text-center">
+          <button
+            class="btn btn-success form-control w-25"
+            (click)="getBooking()"
+          >
+            Search
+          </button>
+        </div>
+        <div>
+          <span>
+            <div class="table mt-2">
+              <thead class="table-dark">
+                <tr>
+                  <th>ID</th>
+                  <th>Flight Name</th>
+                  <th>From</th>
+                  <th>To</th>
+                  <th>Fare</th>
+                  <th>Date</th>
+                  <th>firstName</th>
+                  <th>lastName</th>
+                  <th>seatNumber</th>
+                </tr>
+              </thead>
+              <tbody>
+                <td>{{ booking.id}}</td>
+                <td>{{ booking.flight.flightname }}</td>
+                <td>{{ booking.flight.from }}</td>
+                <td>{{ booking.flight.to }}</td>
+                <td>{{ booking.flight.fare }}</td>
+                <td>{{ booking.flight.date | date }}</td>
+                <td>{{ booking.firstName }}</td>
+                <td>{{ booking.lastName }}</td>
+                <td>{{ booking.seatNumber }}</td>
+              </tbody>
+            </div>
+          </span>
+        </div>
         <div class="col-3 col-md-3 d-none d-md-block"></div>
-       <div class="col-12 col-md-6">
-    <h3 class="d-flex justify-content-center display-5 bg-secondary text-white mt-5 p-4">Booking Search</h3>
-    <hr>
-    Booking Reference:
-    <input type="number" class="form-control w-25" min=1 [(ngModel)]="bookingid">
-    <hr>
-    <div class="text-center">
-        <button class="btn btn-success form-control w-25" (click)="getBooking()">Search</button>
+      </div>
     </div>
-    <div>
-        <span>
-            <strong>
-            {{"Flight Number: "+booking.flight.flightname}}
-            <br>
-            {{" "+booking.flight.from+" To "+booking.flight.to}}
-            <br>
-            {{"Fare Price:  "+booking.flight.fare}}
-            <br>
-            {{"Date: "}}{{booking.flight.date|date}}
-            <br>
-            {{"Name: "+booking.firstName+" "+booking.lastName}}
-            <br>
-            {{"Seat Number:" +booking.seatNumber}}
-        </strong>
-            </span>
-    </div>
-    <div class="col-3 col-md-3 d-none d-md-block"></div>
-    </div>
-</div>
+  </div>

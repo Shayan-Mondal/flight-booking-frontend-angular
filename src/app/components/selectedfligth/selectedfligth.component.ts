@@ -1,4 +1,4 @@
-import { FlightService } from './../../services/flight.service';
+import { FlightService } from '../../services/flight.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 

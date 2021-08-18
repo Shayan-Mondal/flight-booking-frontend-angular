@@ -2,12 +2,13 @@
     <div class="row available">
         <div class="col-3 col-md-3 d-none d-md-block"></div>
         <div class="col-12 col-md-6">
-    <h3 class="bg-secondary text-white d-flex justify-content-center mt-5 p-4">Create Flight</h3>
+    <h3 class="bg-secondary text-white d-flex justify-content-center mt-5 p-4"> Flight Details</h3>
+    <div *ngIf="message!==''" class="alert alert-danger text-center">{{message}}</div> 
     <input type="text" class="form-control mb-2" placeholder="Flight Name" [(ngModel)]="flight.flightname">
     <input type="text" class="form-control mb-2" placeholder="Travelling From" [(ngModel)]="flight.from">
     <input type="text" class="form-control mb-2" placeholder="Going To" [(ngModel)]="flight.to">
     <input type="date" class="date" placeholder="date" class="form-control mb-2" [(ngModel)]="flight.date">
-    <input type="number" class="form-control mb-2" placeholder="Fare Price" min=10 [(ngModel)]="flight.fare">
+    <input type="number" class="form-control mb-2" placeholder="Fare Price" min=100 [(ngModel)]="flight.fare">
     <div class="text-center">
         <button class="btn btn-success w-25" (click)="addflight()">Submit</button>
     </div>

@@ -14,6 +14,7 @@ export class FlightsearchComponent implements OnInit {
   froms:string='';
   tos:string='';
   dates:Date=new Date();
+  message:string='';
   flights:Array<Flight>=new Array<Flight>();
   constructor(private flightService:FlightService) { }
 
@@ -21,7 +22,13 @@ export class FlightsearchComponent implements OnInit {
     console.log(this.froms);
     
   }
-  getFlight(){
-    this.flightService.getAllFlightsByArea(this.froms,this.tos,this.dates).subscribe((dbflight)=>this.flights=dbflight);
+  getFlight(){ 
+    if(this.froms==''&&this.tos==''){
+      this.message="Pease enter the details"
+    }
+    else{
+      this.flightService.getAllFlightsByArea(this.froms,this.tos,this.dates).subscribe((dbflight)=>this.flights=dbflight);
+    }
+    
   }
 }

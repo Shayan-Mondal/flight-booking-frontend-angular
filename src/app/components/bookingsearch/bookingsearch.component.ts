@@ -9,6 +9,7 @@ import { BookingService } from 'src/app/services/booking.service';
 })
 export class BookingsearchComponent implements OnInit {
   bookingid:number=0;
+  message:string='';
   booking:Booking={
     id:0,
     firstName:'',
@@ -28,6 +29,12 @@ export class BookingsearchComponent implements OnInit {
   ngOnInit(): void {
   }
   getBooking(){
-    this.bookingService.getBooking(this.bookingid).subscribe((data)=>this.booking=data);
+    if(this.bookingid==0){
+      this.message="Invalid number"
+    }
+    else{
+      this.bookingService.getBooking(this.bookingid).subscribe((data)=>this.booking=data);
+    }
+    
   }
 }

@@ -1,7 +1,9 @@
+import { SelectedfligthComponent } from './components/selectedfligth/selectedfligth.component';
+
 import { RegistrationComponent } from './components/registration/registration.component';
 import { LoginComponent } from './components/login/login.component';
 import { UpdateDeleteFlightComponent } from './components/update-delete-flight/update-delete-flight.component';
-import { SelectedfligthComponent } from './components/selectedfligth/selectedfligth.component';
+
 import { HomeComponent } from './components/home/home.component';
 import { CheckinComponent } from './components/checkin/checkin.component';
 import { BookingconfirmationComponent } from './components/bookingconfirmation/bookingconfirmation.component';
@@ -21,7 +23,8 @@ const routes: Routes = [
   {path:'checkin',component:CheckinComponent},
   {path:'selectedflight/:id',component:SelectedfligthComponent},
   {path:'login',component:LoginComponent},
-  {path:'register',component:RegistrationComponent}
+  {path:'register',component:RegistrationComponent},
+  {path:'update/delete',component:UpdateDeleteFlightComponent}
 ];
 
 @NgModule({
